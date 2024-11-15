@@ -1,0 +1,35 @@
+create database teste
+
+create table tabela(
+	ID int primary key auto_increment,
+	PrimeiroNome varchar(255) not null,
+	UltimoNome varchar(255) not null,
+	Idade int
+)
+
+insert into teste.tabela (PrimeiroNome, UltimoNome)
+values ('Eduardo', 'Zirbell')
+
+insert into teste.tabela (PrimeiroNome, UltimoNome, Idade)
+values ('Eduardo', 'Zirbell', 18)
+
+alter table teste add Email varchar(255) not null unique;
+
+insert into teste.tabela (PrimeiroNome, UltimoNome, Idade)
+values ('Eduardo', 'Zirbell', 18, 'eduardozirbell@hotmail.com')
+
+select * from teste.tabela where ID = 3
+
+select concat(PrimeiroNome, ' ', UltimoNome) from teste.tabela where ID = 1
+
+alter table teste rename column Email to EmailAlterado;
+
+alter table table_name modify column column_name datatype;
+
+alter table teste drop column EmailAlterado;
+
+drop table tabela
+
+drop database table
+
+

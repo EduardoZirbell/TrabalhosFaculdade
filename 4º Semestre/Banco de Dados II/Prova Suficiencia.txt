@@ -1,0 +1,98 @@
+Resposta 1:
+CREATE TABLE Genero (
+	cd_genero int primary key,
+	ds_genero varchar(30)
+);
+
+CREATE TABLE Ator (
+	cd_ator int primary key,
+	nm_ator varchar(50
+);
+
+CREATE TABLE Filme_Ator (
+	foreing key (cd_filme) references Filme(cd_filme),
+	foreing key (cd_ator) references Ator(cd_ator)
+);
+
+CREATE TABLE Censura (
+	cd_censura int primary key,
+	ds_censura varchar(30)
+);
+
+CREATE TABLE Filme (
+	cd_filme int primary key,
+	foreing key (cd_censura) references Censura(cd_censura),
+	foreing key (cd_genero) references Genero(cd_genero),
+	nm_filme varchar(50),
+	ds_sinopse varchar(250),
+	nr_duracao varchar(20),
+	dt_lancamento DATE,
+	fl_dublado: CHAR(1)
+);
+
+Resposta 2:
+
+A)
+ALTER TABLE Ator
+ADD COLUMN nm_artistico varchar(40);
+
+B)
+ALTER TABLE Censura
+MODIFY ds_censura varchar(50);
+
+C)
+ALTER TABLE Genero
+ADD CONSTRAINT unique_genero UNIQUE (ds_genero);
+
+Resposta 3: 
+
+INSERT INTO Genero (cd_genero, ds_genero)
+VALUES (1, 'Terror'),
+(2, 'Romance'),
+(3, 'Aventura');
+
+INSERT INTO Censura (cd_censura, ds_censura)
+VALUES (1, 'Livre'),
+(2, '12'),
+(3, '+18');
+
+INSERT INTO Ator (cd_ator, nm_ator, nm_artistico)
+VALUES (1, 'Rian Reinaldo' , 'Ryan Reynolds'),
+(2, 'Hugo Jackhomem' , 'Hugh Jackmann'),
+(3, 'Breno Pingo' , 'Brad Pitt'),
+(4, 'Angelica Joceline' , 'Angelina Jollie'),
+(5, 'Jackson Chan' , 'Jackie Chan');
+
+INSERT INTO Filme (cd_filme, cd_censura, cd_genero, nm_filme, ds_sinopse, nr_duracao, data_lancamento, fl_dublado)
+VALUES (1, 3, 1, 'Colheita Sombria', 'Sinopse', '2h01m', '1996-01-20', '0'),
+(2, 2, 2, 'Vai dar Namoro', 'Sinopse', '2h36m', '2010-03-15', '1'),
+(3, 2, 3, 'Hora do Arrastão', 'Sinopse', '1h59m', '2012-07-30', '1'),
+(4, 3, 2, 'Sr e Sra Silva', 'Sinopse', '1h37m', '2018-08-01', '1'),
+(5, 3, 3, 'Piscina da Morte', 'Sinopse', '2h30m', '2024-07-25', '1'),
+
+INSERT INTO Filme_Ator (cd_filme, cd_ator)
+VALUES (3, 5),
+(4, 4),
+(5, 1),
+(5, 2);
+
+Resposta 4:
+
+SELECT (F.nm_filme, C.ds_censura, G.ds_genero) FROM Filme AS F
+INNER JOIN Censura AS C ON C.cd_censura = F.cd_censura
+INNER JOIN Genero AS G ON G.cd_genero = F.cd_genero
+WHERE C.ds_censura = 'Livre' and F.fl_dublado = '1'
+ORDER BY F.data_lancamento DESC;
+
+Resposta 5:
+
+SELECT (G.ds_genero, COUNT(F.cd_filme)) FROM Filme AS F
+INNER JOIN Genero AS g ON f.cd_genero = g.cd_genero
+GROUP BY g.ds_genero;
+
+Resposta 6:
+
+SELECT (A.nm_artistico) FROM Ator AS A
+WHERE A.cd_ator NOT IN (
+SELECT (F.cd_ator) FROM Filme_Ator AS F
+);

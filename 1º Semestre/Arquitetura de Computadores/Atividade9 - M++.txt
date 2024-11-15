@@ -1,0 +1,6 @@
+INICIO:
+	MOV IN0,A;
+	MOV A,#0F;
+	ADD 0F,A;		
+	MOV A,OUT0;
+	JMP INICIO;

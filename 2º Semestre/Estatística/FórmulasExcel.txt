@@ -1,0 +1,2 @@
+Porcentagem e arredondamento pra 1 casa décimal
+=ARRED(((K2/$K$10)*100);1)
