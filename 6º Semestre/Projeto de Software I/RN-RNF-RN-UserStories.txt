@@ -1,0 +1,18 @@
+RF01 - O sistema deve permitir o cadastro das informações pessoais dos profissionais como nome completo, CPF, e-mail, telefone e perfis em redes sociais que ele possuir.
+RF02 - O sistema deve permitir o cadastro de experiências profissionais de usuários como cargo, empresa, período e atividades desenvolvidas.
+RF03 - O sistema deve permitir o cadastro de formações acadêmicas como graduações, pós-graduações e cursos.
+RF04 - O sistema deve gerar um portfólio digital em formato PDF com os dados do usuário.
+
+RNF01 - O sistema deve seguir a LGPD para garantir segurança e privacidade dos usuários.
+RNF02 - O sistema deve ter design responsivo adaptando-se a diferentes tamanhos de tela.
+RNF03 - O sistema deve possuir desempenho para carregar páginas em até três segundos no máximo.
+
+RN01 - O sistema deve apenas permitir a importação de dados de outras plataformas, como LinkedIn, com a permissão do usuário.
+RN02 - O sistema não deve permitir produções com mesmo título e autores serem cadastradas.
+
+
+---------------------------------------------------------------------------------------------
+
+Como um "gerente de projetos", eu quero "cadastrar um novo projeto assim que o contrato é fechado" para "manter o projeto no portfólio da empresa".
+Como um "designer líder", eu quero "solicitar autorização de gastos de despesas relacionadas à criação visual" para "dar continuidade as minhas funções no projeto".
+Como um "diretor da empresa", eu quero "visualizar um relatório com os funcionários da equipe e os projetos em que estão trabalhando" para "acompanhar a produtividade da equipe".
