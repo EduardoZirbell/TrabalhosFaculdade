@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.poslin.ufmg.br/lig948d"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.poslin.ufmg.br/lig948d">
+    <Prefix name="" IRI="http://www.poslin.ufmg.br/lig948d/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Curso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoLaboratorio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoRegular"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Professor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProfessorAssistente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProfessorTitular"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#licao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Organize"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#assistente_leciona"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isOrganizeBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#leciona"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#titula_leciona"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Exercício1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#João"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Maria"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ontologias"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Semântica"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#CursoLaboratorio"/>
+        <Class IRI="#Curso"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoRegular"/>
+        <Class IRI="#Curso"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProfessorAssistente"/>
+        <Class IRI="#Professor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProfessorTitular"/>
+        <Class IRI="#Professor"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Curso"/>
+        <Class IRI="#Professor"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CursoLaboratorio"/>
+        <Class IRI="#CursoRegular"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Professor"/>
+        <Class IRI="#licao"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ProfessorAssistente"/>
+        <Class IRI="#ProfessorTitular"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#licao"/>
+        <NamedIndividual IRI="#Exercício1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ProfessorAssistente"/>
+        <NamedIndividual IRI="#João"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ProfessorTitular"/>
+        <NamedIndividual IRI="#Maria"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CursoLaboratorio"/>
+        <NamedIndividual IRI="#Ontologias"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CursoRegular"/>
+        <NamedIndividual IRI="#Semântica"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Exercício1"/>
+        <NamedIndividual IRI="#Semântica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#leciona"/>
+        <NamedIndividual IRI="#João"/>
+        <NamedIndividual IRI="#Ontologias"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#leciona"/>
+        <NamedIndividual IRI="#Maria"/>
+        <NamedIndividual IRI="#Semântica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOrganizeBy"/>
+        <NamedIndividual IRI="#Ontologias"/>
+        <NamedIndividual IRI="#João"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isOrganizeBy"/>
+        <NamedIndividual IRI="#Semântica"/>
+        <NamedIndividual IRI="#Maria"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#assistente_leciona"/>
+        <ObjectProperty IRI="#leciona"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#titula_leciona"/>
+        <ObjectProperty IRI="#leciona"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Organize"/>
+        <ObjectProperty IRI="#isOrganizeBy"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Organize"/>
+        <Class IRI="#Professor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#assistente_leciona"/>
+        <Class IRI="#ProfessorAssistente"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isOrganizeBy"/>
+        <Class IRI="#Curso"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOf"/>
+        <Class IRI="#licao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#leciona"/>
+        <Class IRI="#Professor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#titula_leciona"/>
+        <Class IRI="#ProfessorTitular"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Organize"/>
+        <Class IRI="#Curso"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#assistente_leciona"/>
+        <Class IRI="#CursoLaboratorio"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isOrganizeBy"/>
+        <Class IRI="#Professor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOf"/>
+        <Class IRI="#Curso"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#leciona"/>
+        <Class IRI="#Curso"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#titula_leciona"/>
+        <Class IRI="#Curso"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CursoRegular</IRI>
+        <Literal>Curso Regular</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Organize</IRI>
+        <Literal>Organiza</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Professor</IRI>
+        <Literal>Professor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ProfessorAssistente</IRI>
+        <Literal>Professor Assistente</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ProfessorTitular</IRI>
+        <Literal>Professor Titular</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#assistente_leciona</IRI>
+        <Literal>Assistente Leciona</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isOrganizeBy</IRI>
+        <Literal>é organizado por</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isPartOf</IRI>
+        <Literal>é parte de</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#leciona</IRI>
+        <Literal>leciona</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#licao</IRI>
+        <Literal>Lição</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#titula_leciona</IRI>
+        <Literal>Titular Leciona</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
